@@ -17,8 +17,8 @@ from ..overlay import DesktopWideOverlay
 
 MAX_SHM = 10
 NET_ACTIVE_WINDOW = "_NET_ACTIVE_WINDOW"
-#WM_APP_NAME = os.getenv("RK_WM_APP_NAME", "RuneScape")
-WM_APP_NAME = os.getenv("RK_WM_APP_NAME", "steam_app_1343400")
+WM_APP_NAME_native = os.getenv("RK_WM_APP_NAME", "RuneScape")
+WM_APP_NAME_steam = os.getenv("RK_WM_APP_NAME", "steam_app_1343400")
 
 
 class X11GameManager(GameManager):
@@ -104,7 +104,7 @@ class X11GameManager(GameManager):
             return False
 
         instance_name, app_name = wm_class.split("\00")
-        return app_name == WM_APP_NAME
+        return app_name == WM_APP_NAME_native or app_name == WM_APP_NAME_steam
 
     def get_active_window(self) -> int:
         return self.get_property(self.screen.root, "_NET_ACTIVE_WINDOW")
