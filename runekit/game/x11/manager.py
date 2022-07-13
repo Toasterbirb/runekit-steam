@@ -17,7 +17,8 @@ from ..overlay import DesktopWideOverlay
 
 MAX_SHM = 10
 NET_ACTIVE_WINDOW = "_NET_ACTIVE_WINDOW"
-WM_APP_NAME = os.getenv("RK_WM_APP_NAME", "RuneScape")
+#WM_APP_NAME = os.getenv("RK_WM_APP_NAME", "RuneScape")
+WM_APP_NAME = os.getenv("RK_WM_APP_NAME", "steam_app_1343400")
 
 
 class X11GameManager(GameManager):
